@@ -1,0 +1,26 @@
+server:
+  port: 8888
+
+
+
+spring:
+  application:
+    name: micro-service-config
+
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://gitee.com/liugongding/springcloud_study
+          search-paths: respo
+          username: 1051533375@qq.com
+          password: toptop520147
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+

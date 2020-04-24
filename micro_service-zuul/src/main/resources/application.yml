@@ -1,0 +1,20 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7001/eureka/
+spring:
+  application:
+    name: product-service-zuul
+  zipkin:
+    base-url: http://localhost:9411
+
+zuul:
+  routes:
+    api-a:
+      path: /api-data/**
+      serviceId: MICRO-SERVICE-CONSUMER-RIBBON
+    api-b:
+      path: /api-view/**
+      serviceId: PRODUCT-VIEW-SERVICE-FEIGN
+server:
+  port: 7070
